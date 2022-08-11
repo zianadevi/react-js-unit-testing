@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useDeps} from "../../shared/DepContext";
+import {useDeps} from "../../shared/context/DependencyContext";
 
 const useJsonPlaceHolder = () => {
     const {jsonPlaceHolderService} = useDeps();

@@ -6,17 +6,27 @@ import reportWebVitals from './reportWebVitals';
 import {apiClientFactory} from "./shared/ApiClientFactory";
 import {clientInstance} from "./shared/AxiosClient";
 import {serviceFactory} from "./services/ServiceFactory";
-import {DepsProvider} from "./shared/DepContext";
+import {DependencyProvider} from "./shared/context/DependencyContext";
+import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
+import {setupStore} from "./shared/state/store";
+import {AuthProvider} from "./shared/context/AuthContext";
 
 const apiClient = apiClientFactory(clientInstance);
 const services = serviceFactory(apiClient);
-
+const store = setupStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <DepsProvider services={services}>
-            <App/>
-        </DepsProvider>
+        <Provider store={store}>
+            <DependencyProvider services={services}>
+                <BrowserRouter>
+                    <AuthProvider>
+                        <App/>
+                    </AuthProvider>
+                </BrowserRouter>
+            </DependencyProvider>
+        </Provider>
     </React.StrictMode>
 );
 

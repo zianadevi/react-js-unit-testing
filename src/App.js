@@ -1,12 +1,10 @@
 import './App.css';
-import JsonPlaceHolderView from "./features/JsonPlaceHolder/JsonPlaceHolderView";
-import ProductView from "./features/Product/ProductView";
+import AppRouter from "./navigation/AppRouter";
 
 const App = () => {
     return (
         <div>
-            {/*<JsonPlaceHolderView/>*/}
-            <ProductView/>
+            <AppRouter/>
         </div>
     );
 }
