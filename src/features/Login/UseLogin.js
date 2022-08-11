@@ -3,6 +3,7 @@ import useViewState from "../../shared/hook/UseViewState";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../../shared/hook/UseAuth";
 import {RequiredFieldError, UnauthorizedError} from "../../shared/errors/AppError";
+import {APP_NAVIGATION} from "../../shared/constants";
 
 const useLogin = () => {
     const {onLogin} = useAuth();
@@ -23,7 +24,7 @@ const useLogin = () => {
             } else {
                 const response = await onLogin(userCred)
                 if (response) {
-                    navigate('/main', {replace: true});
+                    navigate(APP_NAVIGATION.MAIN, {replace: true});
                 } else {
                     throw new UnauthorizedError();
                 }
