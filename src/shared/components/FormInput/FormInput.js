@@ -8,8 +8,8 @@ const FormInput = ({id, label, type = 'text', value, onValueChange}) => {
     }
     return (
         <>
-            <label>{label}</label>
-            <input name={id} type={type} value={value} onChange={handleOnInput}/>
+            <label htmlFor={id}>{label}</label>
+            <input id={id} name={id} type={type} value={value} onChange={handleOnInput}/>
         </>
     );
 };

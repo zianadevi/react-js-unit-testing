@@ -8,7 +8,7 @@ export const loginService = ({doPost, doGet}) => {
                 }
             })
         } catch (e) {
-            throw e;
+            throw new Error(e);
         }
     }
     const doGetUser = async () => {
@@ -17,7 +17,7 @@ export const loginService = ({doPost, doGet}) => {
                 url: '/user-info'
             })
         } catch (e) {
-            throw e;
+            throw new Error(e);
         }
     }
     return {

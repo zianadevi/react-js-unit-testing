@@ -5,6 +5,6 @@ const rootReducer = combineReducers({
     userInfoReducer
 })
 
-export const setupStore = () => {
-    return createStore(rootReducer);
+export const setupStore = (initialState) => {
+    return createStore(rootReducer, initialState);
 }

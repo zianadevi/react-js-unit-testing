@@ -4,7 +4,7 @@ export const productService = ({doGet}) => {
         try {
             return await doGet({url: '/product'});
         } catch (e) {
-            throw  e;
+            throw new Error(e);
         }
     }
 
