@@ -7,5 +7,11 @@ export const APP_NAVIGATION = {
     PRODUCT: 'product'
 }
 
+export const SERVICE = {
+    LOGIN: '/login',
+    USER_INFO: '/user-info',
+    PRODUCT: '/product'
+}
+
 export const APP_TOKEN = 'token';
 export const USER_INFO = 'user_info';
